@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  tasks:
+     - name: verify nginx service
+       command: service nginx status
+
+     - name: verifying nginx listening on 80
+       wait_for: port=80 timeout=1 

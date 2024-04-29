@@ -1,0 +1,9 @@
+--- 
+- name: "Adding content"
+  hosts: localhost
+  tasks:
+     - name: "create a file"
+       command: touch a.txt
+     - lineinfile:
+           dest: a.txt
+           line: "hello there!"
