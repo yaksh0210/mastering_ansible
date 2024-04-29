@@ -14,9 +14,9 @@
 
     - name: ensure mod_wsgi enabled
       apache2_module: state=present name=wsgi
-      modify: restart apache2
+      notify: restart apache2
 
 #for understating handlers
   handlers:
-      - name: restart apache2
-        service: name=apace2 state=restarted
+    - name: restart apache2
+      service: name=apace2 state=restarted

@@ -1,0 +1,11 @@
+---
+- hosts: target2
+ 
+  tasks:
+     - name: configure nginx site
+       template: src=template/nginx.conf.j2 dest=/etc/nginx/sites-avilable/demo mod=0644
+       notify: restarted nginx
+
+  handlers:
+     - name: restart nginx
+       service: name=nginx state=restarted
