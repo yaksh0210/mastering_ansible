@@ -1,0 +1,6 @@
+---
+- name: 'create a command'
+  hosts: localhost
+  tasks:
+    - name: "hostname is"
+      command: hostname

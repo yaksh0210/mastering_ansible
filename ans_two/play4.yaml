@@ -1,0 +1,9 @@
+---
+- name: "use of service"
+  hosts: all
+  tasks:
+     - name: create installation
+       apt: name=nginx state=present update_caches=yes
+
+     - name: ensure the start
+       service: name=nginx state=started enabled=yes

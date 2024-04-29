@@ -1,0 +1,10 @@
+---
+- name: "use of with_items"
+  hosts: target1
+  tasks:
+     - name: installation
+       apt: name={{item}} state=present update_cache=yes
+       with_items:
+             - apache2
+             - python-pip
+             - python-virtualenv

@@ -1,0 +1,14 @@
+#performed and practiced commands
+
+
+1) ansible -i [inventory name] --list-hosts all : this command will works to list all hosts define in given inventory or defined inventory
+
+2) ansible -i [inventory name] --list-hosts "*" : same as above but using wildcard character
+
+3) ansible -i [inventory name] --list-hosts [name of host] : to get perticular data
+
+4) ansible -m command/shell -a "[command name]" all : to get shell module to generate an output of given input commamd 
+
+5) ansible -m "hostname" all : to generate command for all server define in the given module
+
+6) ansible-playbook [playbookname].yaml : this command will execute the created play book 
