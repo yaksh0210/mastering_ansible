@@ -1,0 +1,19 @@
+---
+# tasks file for nginx
+- name: install nginx
+  apt: name=nginx state=present update_cache=yes
+
+- name: configure nginx sites
+  template: src=nginx.conf.j2 dest=/etc/nginx/sites-available/demo
+  with_dict: sites
+  notify: restart nginx
+
+- name: get active sites
+  shell: ls -l /etc/nginx/sites-enabled
+  register: active
+
+- name: de-activate sites 
+  file: path=/etc/nginx/sites-enabled/{{ item }} state=absent
+  with_items: active.stdout_lines
+  when: item not in sites
+  notify: restart nginx
