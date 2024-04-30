@@ -1,0 +1,14 @@
+1) ansible-playbook [playbook_name] --list-tag :-
+
+ this command will list out all tags which are used in a playbook
+
+2) ansible-playbook [playbook_name- --tags "[tag_name]" :-
+
+ this command will help to run playbook tasks which have particular
+ [tag_name] defined in it
+
+
+3) ansible-playbook [playbook_name- --skip-tags "[tag_name]" :-
+
+ this command will skip to run playbook tasks which have particular
+ [tag_name] defined in it

@@ -1,0 +1,4 @@
+we can also use 
+
+
+ansible-playbook [playbook_name] --limit [hostname] : which can help to run playbook commands for perticular host
