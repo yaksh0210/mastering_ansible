@@ -11,3 +11,10 @@
 - name: ensure mysql listening on all ports
   lineinfile: dest=/etc/mysql/my.cng regexp=^bind-address line="bind-address = {{ ansible_localhost.ipv4.address }}"
   notify: restart mysql
+
+- name: create database
+  mysql_db: name={{ db_name }} state=present
+
+- name: create demo user
+  mysql_user: name={{ db_user_name }} password={{ db_user_pass }} priv= {{ db_name }}.*:ALL host='{{ db_user_host }}' state=present
+
