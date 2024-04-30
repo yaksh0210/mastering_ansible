@@ -1,0 +1,1 @@
+ansible -m setup localhost : to check all facts of the given hosts at command line
